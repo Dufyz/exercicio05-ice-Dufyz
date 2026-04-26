@@ -39,6 +39,42 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
         def end_printString(self, _r):
             return _M_Demo.Printer._op_printString.end(self, _r)
 
+        def printReverse(self, s, context=None):
+            return _M_Demo.Printer._op_printReverse.invoke(self, ((s, ), context))
+
+        def printReverseAsync(self, s, context=None):
+            return _M_Demo.Printer._op_printReverse.invokeAsync(self, ((s, ), context))
+
+        def begin_printReverse(self, s, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Printer._op_printReverse.begin(self, ((s, ), _response, _ex, _sent, context))
+
+        def end_printReverse(self, _r):
+            return _M_Demo.Printer._op_printReverse.end(self, _r)
+
+        def printUpper(self, s, context=None):
+            return _M_Demo.Printer._op_printUpper.invoke(self, ((s, ), context))
+
+        def printUpperAsync(self, s, context=None):
+            return _M_Demo.Printer._op_printUpper.invokeAsync(self, ((s, ), context))
+
+        def begin_printUpper(self, s, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Printer._op_printUpper.begin(self, ((s, ), _response, _ex, _sent, context))
+
+        def end_printUpper(self, _r):
+            return _M_Demo.Printer._op_printUpper.end(self, _r)
+
+        def getStringLength(self, s, context=None):
+            return _M_Demo.Printer._op_getStringLength.invoke(self, ((s, ), context))
+
+        def getStringLengthAsync(self, s, context=None):
+            return _M_Demo.Printer._op_getStringLength.invokeAsync(self, ((s, ), context))
+
+        def begin_getStringLength(self, s, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Printer._op_getStringLength.begin(self, ((s, ), _response, _ex, _sent, context))
+
+        def end_getStringLength(self, _r):
+            return _M_Demo.Printer._op_getStringLength.end(self, _r)
+
         @staticmethod
         def checkedCast(proxy, facetOrContext=None, context=None):
             return _M_Demo.PrinterPrx.ice_checkedCast(proxy, '::Demo::Printer', facetOrContext, context)
@@ -71,6 +107,15 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
         def printString(self, s, current=None):
             raise NotImplementedError("servant method 'printString' not implemented")
 
+        def printReverse(self, s, current=None):
+            raise NotImplementedError("servant method 'printReverse' not implemented")
+
+        def printUpper(self, s, current=None):
+            raise NotImplementedError("servant method 'printUpper' not implemented")
+
+        def getStringLength(self, s, current=None):
+            raise NotImplementedError("servant method 'getStringLength' not implemented")
+
         def __str__(self):
             return IcePy.stringify(self, _M_Demo._t_PrinterDisp)
 
@@ -80,8 +125,122 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
     Printer._ice_type = _M_Demo._t_PrinterDisp
 
     Printer._op_printString = IcePy.Operation('printString', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), None, ())
+    Printer._op_printReverse = IcePy.Operation('printReverse', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), None, ())
+    Printer._op_printUpper = IcePy.Operation('printUpper', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), None, ())
+    Printer._op_getStringLength = IcePy.Operation('getStringLength', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), IcePy._t_int, False, 0), ())
 
     _M_Demo.Printer = Printer
     del Printer
+
+_M_Demo._t_Calculator = IcePy.defineValue('::Demo::Calculator', Ice.Value, -1, (), False, True, None, ())
+
+if 'CalculatorPrx' not in _M_Demo.__dict__:
+    _M_Demo.CalculatorPrx = Ice.createTempClass()
+    class CalculatorPrx(Ice.ObjectPrx):
+
+        def add(self, a, b, context=None):
+            return _M_Demo.Calculator._op_add.invoke(self, ((a, b), context))
+
+        def addAsync(self, a, b, context=None):
+            return _M_Demo.Calculator._op_add.invokeAsync(self, ((a, b), context))
+
+        def begin_add(self, a, b, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Calculator._op_add.begin(self, ((a, b), _response, _ex, _sent, context))
+
+        def end_add(self, _r):
+            return _M_Demo.Calculator._op_add.end(self, _r)
+
+        def subtract(self, a, b, context=None):
+            return _M_Demo.Calculator._op_subtract.invoke(self, ((a, b), context))
+
+        def subtractAsync(self, a, b, context=None):
+            return _M_Demo.Calculator._op_subtract.invokeAsync(self, ((a, b), context))
+
+        def begin_subtract(self, a, b, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Calculator._op_subtract.begin(self, ((a, b), _response, _ex, _sent, context))
+
+        def end_subtract(self, _r):
+            return _M_Demo.Calculator._op_subtract.end(self, _r)
+
+        def multiply(self, a, b, context=None):
+            return _M_Demo.Calculator._op_multiply.invoke(self, ((a, b), context))
+
+        def multiplyAsync(self, a, b, context=None):
+            return _M_Demo.Calculator._op_multiply.invokeAsync(self, ((a, b), context))
+
+        def begin_multiply(self, a, b, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Calculator._op_multiply.begin(self, ((a, b), _response, _ex, _sent, context))
+
+        def end_multiply(self, _r):
+            return _M_Demo.Calculator._op_multiply.end(self, _r)
+
+        def divide(self, a, b, context=None):
+            return _M_Demo.Calculator._op_divide.invoke(self, ((a, b), context))
+
+        def divideAsync(self, a, b, context=None):
+            return _M_Demo.Calculator._op_divide.invokeAsync(self, ((a, b), context))
+
+        def begin_divide(self, a, b, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Calculator._op_divide.begin(self, ((a, b), _response, _ex, _sent, context))
+
+        def end_divide(self, _r):
+            return _M_Demo.Calculator._op_divide.end(self, _r)
+
+        @staticmethod
+        def checkedCast(proxy, facetOrContext=None, context=None):
+            return _M_Demo.CalculatorPrx.ice_checkedCast(proxy, '::Demo::Calculator', facetOrContext, context)
+
+        @staticmethod
+        def uncheckedCast(proxy, facet=None):
+            return _M_Demo.CalculatorPrx.ice_uncheckedCast(proxy, facet)
+
+        @staticmethod
+        def ice_staticId():
+            return '::Demo::Calculator'
+    _M_Demo._t_CalculatorPrx = IcePy.defineProxy('::Demo::Calculator', CalculatorPrx)
+
+    _M_Demo.CalculatorPrx = CalculatorPrx
+    del CalculatorPrx
+
+    _M_Demo.Calculator = Ice.createTempClass()
+    class Calculator(Ice.Object):
+
+        def ice_ids(self, current=None):
+            return ('::Demo::Calculator', '::Ice::Object')
+
+        def ice_id(self, current=None):
+            return '::Demo::Calculator'
+
+        @staticmethod
+        def ice_staticId():
+            return '::Demo::Calculator'
+
+        def add(self, a, b, current=None):
+            raise NotImplementedError("servant method 'add' not implemented")
+
+        def subtract(self, a, b, current=None):
+            raise NotImplementedError("servant method 'subtract' not implemented")
+
+        def multiply(self, a, b, current=None):
+            raise NotImplementedError("servant method 'multiply' not implemented")
+
+        def divide(self, a, b, current=None):
+            raise NotImplementedError("servant method 'divide' not implemented")
+
+        def __str__(self):
+            return IcePy.stringify(self, _M_Demo._t_CalculatorDisp)
+
+        __repr__ = __str__
+
+    _M_Demo._t_CalculatorDisp = IcePy.defineClass('::Demo::Calculator', Calculator, (), None, ())
+    Calculator._ice_type = _M_Demo._t_CalculatorDisp
+
+    Calculator._op_add = IcePy.Operation('add', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_int, False, 0), ((), IcePy._t_int, False, 0)), (), ((), IcePy._t_int, False, 0), ())
+    Calculator._op_subtract = IcePy.Operation('subtract', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_int, False, 0), ((), IcePy._t_int, False, 0)), (), ((), IcePy._t_int, False, 0), ())
+    Calculator._op_multiply = IcePy.Operation('multiply', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_int, False, 0), ((), IcePy._t_int, False, 0)), (), ((), IcePy._t_int, False, 0), ())
+    Calculator._op_divide = IcePy.Operation('divide', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_int, False, 0), ((), IcePy._t_int, False, 0)), (), ((), IcePy._t_double, False, 0), ())
+
+    _M_Demo.Calculator = Calculator
+    del Calculator
 
 # End of module Demo
